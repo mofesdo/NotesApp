@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+#textboxid
+{
+    height:2em;
+    font-size:12pt;
+}
