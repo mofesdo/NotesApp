@@ -8,3 +8,24 @@ body{
     height:2em;
     font-size:12pt;
 }
+
+h1, h3{
+    text-align: center;
+}
+form{
+    margin: 0 20%;
+}
+table{
+    width: 60%;
+    margin: 0 20%;
+}
+td{
+    padding: 20px;
+    border: solid white 1px
+}
+
+#addBtn{
+    margin: 2px 40%;
+    width: 20%;
+    padding: 10px;
+}

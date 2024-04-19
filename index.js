@@ -22,14 +22,14 @@ function load(){
             row = document.createElement("tr");
             let td = document.createElement("td");
             td.classList.add(`${notes[i].num}`);
-            td.innerHTML= `<h1>${notes[i].num}</h1><p>${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
+            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p>${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
             row.appendChild(td);
         }
         //If i is odd, dont create a row. Only append new data cell to existing row
         else{
             let td = document.createElement("td");
             td.classList.add(`${notes[i].num}`);
-            td.innerHTML= `<h1>${notes[i].num}</h1><p>${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
+            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p>${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
             row.appendChild(td);
             table.appendChild(row);
         }
