@@ -1,5 +1,4 @@
 //document.querySelector("#addBtn").addEventListener("click", add);
-load();
 let notes = [
     {num: 1, note: "Hi this is my first note"},
     {num: 2, note: "Hi this is my second note"},
@@ -8,7 +7,9 @@ let notes = [
     {num: 5, note: "Hi this is my fifth note"}
 ]
 
-//localStorage.setItem("notes", JSON.stringify(notes))
+localStorage.setItem("notes", JSON.stringify(notes))
+
+load();
 function load(){
     console.log("loading notes...")
     let notes = JSON.parse(localStorage.getItem("notes"));
