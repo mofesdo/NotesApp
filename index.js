@@ -7,6 +7,8 @@ let notes = [
 //localStorage.setItem("notes", JSON.stringify(notes))
 function load(){
     console.log("loading notes...")
+    let notes = JSON.parse(localStorage.getItem("notes"));
+    console.log(notes)
     
 }
 
