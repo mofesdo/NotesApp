@@ -44,6 +44,10 @@ function load(){
 
 function add(){
     console.log("adding note...")
+    let notes = JSON.parse(localStorage.getItem("notes"));
+    let note = document.querySelector("#textboxid").value;
+    console.log(note)
+
 
 }
 
