@@ -29,3 +29,9 @@ td{
     width: 20%;
     padding: 10px;
 }
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+  }

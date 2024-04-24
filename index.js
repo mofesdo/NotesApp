@@ -1,4 +1,4 @@
-//document.querySelector("#addBtn").addEventListener("click", add);
+/*
 let notes = [
     {num: 1, note: "Hi this is my first note"},
     {num: 2, note: "Hi this is my second note"},
@@ -8,8 +8,13 @@ let notes = [
 ]
 
 localStorage.setItem("notes", JSON.stringify(notes))
+*/
 
-load();
+//localStorage.removeItem("notes");
+if(localStorage.getItem("notes") != null){
+    load();
+}
+
 function load(){
     console.log("loading notes...")
     let notes = JSON.parse(localStorage.getItem("notes"));
@@ -23,7 +28,7 @@ function load(){
             row = document.createElement("tr");
             let td = document.createElement("td");
             td.classList.add(`${notes[i].num}`);
-            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p>${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
+            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p maxlength="50">${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
             row.appendChild(td);
         }
         //If i is odd, dont create a row. Only append new data cell to existing row
@@ -44,13 +49,23 @@ function load(){
 
 function add(){
     console.log("adding note...")
-    let notes = JSON.parse(localStorage.getItem("notes"));
-    let note = document.querySelector("#textboxid").value;
-    console.log(note)
-    let num = notes.length;
-    console.log(num)
-
-
+    if(localStorage.getItem("notes") == null){
+        let note = document.querySelector("#textboxid").value;
+        let notes = [{num: 1, note:note}]
+        localStorage.setItem("notes", JSON.stringify(notes));
+    }
+    else{
+        let notes = JSON.parse(localStorage.getItem("notes"));
+        let note = document.querySelector("#textboxid").value;
+    
+        console.log(note)
+        let num = notes.length;
+        let newNote = {num: num, note: note}
+        notes.push(newNote)
+        localStorage.setItem("notes", JSON.stringify(notes))
+        console.log(num)
+    }
+    location.reload();
 }
 
 function modal(){
