@@ -28,14 +28,14 @@ function load(){
             row = document.createElement("tr");
             let td = document.createElement("td");
             td.classList.add(`${notes[i].num}`);
-            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p maxlength="50">${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
+            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p class="noteText">${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
             row.appendChild(td);
         }
         //If i is odd, dont create a row. Only append new data cell to existing row
         else{
             let td = document.createElement("td");
             td.classList.add(`${notes[i].num}`);
-            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p>${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
+            td.innerHTML= `<h1>Note ${notes[i].num}</h1><p class="noteText">${notes[i].note}</p><button class = 'modalBtn' onClick = 'modal()'> View Detail</button>`
             row.appendChild(td);
             table.appendChild(row);
         }
@@ -59,7 +59,7 @@ function add(){
         let note = document.querySelector("#textboxid").value;
     
         console.log(note)
-        let num = notes.length;
+        let num = notes.length + 1;
         let newNote = {num: num, note: note}
         notes.push(newNote)
         localStorage.setItem("notes", JSON.stringify(notes))
