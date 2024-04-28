@@ -11,6 +11,8 @@ localStorage.setItem("notes", JSON.stringify(notes))
 */
 
 //localStorage.removeItem("notes");
+
+
 if(localStorage.getItem("notes") != null){
     load();
 }
